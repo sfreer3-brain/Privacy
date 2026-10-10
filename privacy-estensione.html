@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Informativa privacy – Strumenti agenzia</title>
+<style>
+  :root { --bg:#f6f8fc; --card:#fff; --text:#1c2333; --muted:#5b6475; --accent:#1e3a73; --line:#dde3ee; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#0f1522; --card:#172033; --text:#e6eaf2; --muted:#9aa4b8; --accent:#8fb0f0; --line:#2a3550; }
+  }
+  :root[data-theme="dark"] { --bg:#0f1522; --card:#172033; --text:#e6eaf2; --muted:#9aa4b8; --accent:#8fb0f0; --line:#2a3550; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 56px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 24px; }
+  h1 { font-size:1.6rem; line-height:1.25; margin:0 0 4px; color:var(--accent); }
+  h2 { font-size:1.1rem; margin:28px 0 8px; color:var(--accent); }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 20px; }
+  ul { padding-left:1.2em; } li { margin:4px 0; }
+  table { width:100%; border-collapse:collapse; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:8px 10px; border-top:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; }
+  .tab { overflow-x:auto; }
+  code { font-size:.9em; }
+  .nota { color:var(--muted); font-size:.92rem; border-top:1px solid var(--line); margin-top:28px; padding-top:14px; }
+</style>
+</head>
+<body>
+<main><div class="card">
+<h1>Informativa sulla privacy</h1>
+<p class="meta">Estensione per Google Chrome «Strumenti agenzia» – Lloyd Varesino, Varese<br>Ultimo aggiornamento: 10 ottobre 2026</p>
+
+<h2>In sintesi</h2>
+<p>L'estensione lavora <strong>solo sul computer di chi la usa</strong>. Non invia dati allo sviluppatore né a server esterni, non usa sistemi di analisi o pubblicità e non vende né cede dati a nessuno.</p>
+
+<h2>A cosa serve</h2>
+<p>L'estensione è uno strumento interno per il personale e i collaboratori dell'agenzia che usano il gestionale Omniaweb. Automatizza due operazioni che l'operatore farebbe a mano dopo aver effettuato personalmente l'accesso:</p>
+<ul>
+  <li>scaricare il report «Analisi incassi – Dettaglio» in formato XLS;</li>
+  <li>leggere il report dei titoli insoluti di uno o più collaboratori e preparare un file Excel per il controllo del quietanzamento.</li>
+</ul>
+<p>L'accesso a Omniaweb resta sempre a carico dell'operatore: l'estensione non conosce, non legge e non salva nome utente o password.</p>
+
+<h2>Quali dati tratta</h2>
+<ul>
+  <li><strong>Impostazioni</strong>: il nome del modello di report da usare, l'elenco dei punti vendita/collaboratori e la scelta di chiederli ogni volta o tenerli fissi. Sono salvate nella memoria locale di Chrome.</li>
+  <li><strong>Dati dei report</strong>: durante il controllo del quietanzamento l'estensione legge dalle pagine di Omniaweb i dati dei titoli insoluti (per esempio contraente, compagnia, numero di contratto, data di effetto, premio, provvigioni). Li conserva in modo temporaneo nella memoria locale di Chrome solo il tempo necessario a creare il file Excel, poi li cancella.</li>
+  <li><strong>File scaricati</strong>: i file prodotti vengono salvati nella cartella <code>Download\Omnia</code> del computer. Da lì in poi sono file come tutti gli altri, gestiti dall'utente e dall'agenzia.</li>
+</ul>
+<p>L'estensione non raccoglie la cronologia di navigazione e non legge pagine diverse da quelle di Omniaweb.</p>
+
+<h2>Permessi richiesti e perché</h2>
+<div class="tab"><table>
+  <tr><th>Permesso</th><th>Uso</th></tr>
+  <tr><td>Accesso al sito <code>oweb.siaspa.com</code></td><td>Eseguire sulle pagine di Omniaweb i passaggi del report (aprire il report, impostare i filtri, leggere la tabella, avviare l'export).</td></tr>
+  <tr><td><code>downloads</code></td><td>Salvare i file nella cartella <code>Download\Omnia</code> sempre con lo stesso nome e verificare che il file incassi sia già stato scaricato.</td></tr>
+  <tr><td><code>storage</code></td><td>Ricordare le impostazioni e lo stato del lavoro in corso.</td></tr>
+  <tr><td><code>tabs</code></td><td>Trovare o aprire la scheda di Omniaweb, aprire la pagina che crea il file Excel e chiudere la scheda di servizio «download in corso» che Omniaweb apre durante l'export.</td></tr>
+</table></div>
+
+<h2>Codice e librerie</h2>
+<p>Tutto il codice è contenuto nell'estensione; non viene scaricato ed eseguito codice da remoto. Per creare i file Excel sono incluse le librerie open source ExcelJS e JSZip.</p>
+
+<h2>Chi è responsabile dei dati</h2>
+<p>I dati dei clienti letti da Omniaweb restano nella disponibilità dell'agenzia che usa l'estensione, che ne è titolare del trattamento secondo il Regolamento UE 2016/679 (GDPR) e le proprie procedure interne. Lo sviluppatore dell'estensione non riceve e non può vedere questi dati.</p>
+
+<h2>Per quanto tempo</h2>
+<ul>
+  <li>I dati temporanei dei report vengono cancellati appena creato il file Excel, oppure quando si annulla il lavoro.</li>
+  <li>Le impostazioni restano finché l'utente non le cambia o non disinstalla l'estensione: con la disinstallazione Chrome le elimina.</li>
+  <li>I file salvati in <code>Download\Omnia</code> restano sul computer finché l'utente non li cancella.</li>
+</ul>
+
+<h2>Diritti</h2>
+<p>Per esercitare i diritti previsti dal GDPR sui dati personali trattati dall'agenzia (accesso, rettifica, cancellazione e gli altri) ci si può rivolgere all'agenzia Lloyd Varesino.</p>
+
+<h2>Modifiche</h2>
+<p>Se il funzionamento dell'estensione cambia in modo rilevante per la privacy, questa pagina verrà aggiornata e la data in alto modificata.</p>
+
+<h2>Contatti</h2>
+<p>Per domande su questa informativa: Lloyd Varesino, Varese, tramite l'indirizzo email indicato nella scheda dell'estensione sul Chrome Web Store.</p>
+
+<p class="nota">Estensione indipendente, non affiliata né approvata da SIA S.p.A. Omniaweb è un marchio dei rispettivi titolari e viene citato solo per indicare il programma con cui l'estensione funziona.</p>
+</div></main>
+</body>
+</html>
